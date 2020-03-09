@@ -2,14 +2,14 @@ import React from 'react';
 import Card from './Card'
 import './StarWars.css'
 
-const StarWars = (props) => {
+
+const StarWars = props => {
 
 	return (
 		<div className='starwars'>
 			{props.characterList.map((ch, index) => (
-				<Card key={index} name={ch.name} birthYear={ch.birth_year} hairColor={ch.hair_color} height={ch.height} eyeColor={ch.eye_color}  />
+				<Card key={index} name={ch.name} birth_year={ch.birth_year} hair_color={ch.hair_color} height={ch.height} eye_color={ch.eye_color}  />
 			))}
-
 		</div>
 	)
 };

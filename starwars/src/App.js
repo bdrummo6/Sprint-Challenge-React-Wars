@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import StarWars from "./components/StarWars";
+import StarWars from './components/StarWars';
 import './App.css';
 
 const App = () => {
