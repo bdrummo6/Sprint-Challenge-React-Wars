@@ -5,9 +5,9 @@ const Card = (props) => {
 		<div className='card'>
 			<h3>{props.name}</h3>
 			<ul>
-				<li>Birth Year: {props.birth_year}</li>
-				<li>Hair Color: {props.hair_color}</li>
-				<li>Eye Color: {props.eye_color}</li>
+				<li>Birth Year: {props.birthYear}</li>
+				<li>Hair Color: {props.hairColor}</li>
+				<li>Eye Color: {props.eyeColor}</li>
 				<li>Height: {props.height}</li>
 			</ul>
 		</div>

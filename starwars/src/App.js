@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import StarWars from "./components/StarWars";
 import './App.css';
 
 const App = (props) => {
@@ -20,7 +21,7 @@ const App = (props) => {
    return (
       <div className="App">
          <h1 className="Header">React Wars</h1>
-
+         <StarWars characterList={data.starwarsChars} />
       </div>
    );
 };
