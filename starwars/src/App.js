@@ -5,7 +5,6 @@ import './App.css';
 
 const App = () => {
    const [data, setData] = useState([]); // Initializes the state of data as an empty array
-   const [error, setError] = useState();
    
    useEffect(() => {
       axios.get(`https://swapi.co/api/people`)
@@ -13,7 +12,7 @@ const App = () => {
             console.log(response.data); 
             setData(response.data.results); // setsData set to the results array of characters coming from the api
          })
-         .catch(error => setError(error.response));
+         .catch(error => console.log(`Error: ${error}`));
    }, []);
 
    return (
