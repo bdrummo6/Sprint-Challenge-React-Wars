@@ -1,19 +1,26 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import StarWars from './components/StarWars/StarWars';
 import './App.css';
 
 const App = () => {
-  // Try to think through what state you'll need for this app before starting. Then build out
-  // the state properties here.
+   const [data, setData] = useState([]); // Initializes the state of data as an empty array
+   
+   useEffect(() => {
+      axios.get(`https://swapi.co/api/people`)
+         .then(response => {
+            console.log(response.data); 
+            setData(response.data.results); // setsData set to the results array of characters coming from the api
+         })
+         .catch(error => console.log(`Error: ${error}`));
+   }, []);
 
-  // Fetch characters from the star wars api in an effect hook. Remember, anytime you have a 
-  // side effect in a component, you want to think about which state and/or props it should
-  // sync up with, if any.
-
-  return (
-    <div className="App">
-      <h1 className="Header">React Wars</h1>
-    </div>
-  );
-}
+   return (
+      <div className='App'>
+         <h1 className="Header">React Wars</h1>
+         <StarWars characterList={data} /> 
+      </div>
+   );
+};
 
 export default App;
